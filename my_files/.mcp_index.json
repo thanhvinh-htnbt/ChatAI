@@ -1,0 +1,35 @@
+{
+  "file_index": {
+    "example.txt": {
+      "size": 19,
+      "created": "2025-06-04T09:04:01.212126",
+      "modified": "2025-06-04T09:22:44.734539",
+      "extension": ".txt",
+      "name": "example.txt",
+      "path": "example.txt",
+      "hash": "54ec9e924ff8b98fffc13d383e9c5bdf9b84792270abb001bf2c74835de890fd",
+      "indexed_at": "2025-06-04T09:37:56.123769",
+      "last_accessed": "2025-06-04T09:37:56.212234"
+    },
+    "test.txt": {
+      "size": 15,
+      "created": "2025-06-04T09:17:35.110264",
+      "modified": "2025-06-04T09:37:56.245626",
+      "extension": ".txt",
+      "name": "test.txt",
+      "path": "test.txt",
+      "hash": "ea7af9f4e5903c4d4bad21035ea2502cad9013af71be6d3cbdee3b67d8a58b7f",
+      "indexed_at": "2025-06-04T09:37:56.246635",
+      "custom_metadata": {
+        "author": "User",
+        "category": "test",
+        "tags": [
+          "mcp",
+          "filesystem"
+        ]
+      }
+    }
+  },
+  "metadata_cache": {},
+  "last_updated": "2025-06-04T09:37:56.297789"
+}
