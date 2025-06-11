@@ -1,6 +1,6 @@
 {
   "base_directory": "C:\\Users\\Vinh\\Documents\\GitHub\\ChatAI\\my_files",
-  "export_time": "2025-06-04T09:37:56.272786",
+  "export_time": "2025-06-11T09:20:37.466034",
   "stats": {
     "total_files": 2,
     "total_size_bytes": 34,
@@ -8,29 +8,29 @@
     "extensions": {
       ".txt": 2
     },
-    "last_indexed": "2025-06-04T09:37:56.272786"
+    "last_indexed": "2025-06-11T09:20:37.466034"
   },
   "file_index": {
     "example.txt": {
       "size": 19,
-      "created": "2025-06-04T09:04:01.212126",
-      "modified": "2025-06-04T09:22:44.734539",
+      "created": "2025-06-08T17:25:12.716292",
+      "modified": "2025-06-08T17:25:12.716292",
       "extension": ".txt",
       "name": "example.txt",
       "path": "example.txt",
       "hash": "54ec9e924ff8b98fffc13d383e9c5bdf9b84792270abb001bf2c74835de890fd",
-      "indexed_at": "2025-06-04T09:37:56.123769",
-      "last_accessed": "2025-06-04T09:37:56.212234"
+      "indexed_at": "2025-06-11T09:20:37.457034",
+      "last_accessed": "2025-06-11T09:20:37.461035"
     },
     "test.txt": {
       "size": 15,
-      "created": "2025-06-04T09:17:35.110264",
-      "modified": "2025-06-04T09:37:56.245626",
+      "created": "2025-06-08T17:25:12.717297",
+      "modified": "2025-06-11T09:20:37.463016",
       "extension": ".txt",
       "name": "test.txt",
       "path": "test.txt",
       "hash": "ea7af9f4e5903c4d4bad21035ea2502cad9013af71be6d3cbdee3b67d8a58b7f",
-      "indexed_at": "2025-06-04T09:37:56.246635",
+      "indexed_at": "2025-06-11T09:20:37.464014",
       "custom_metadata": {
         "author": "User",
         "category": "test",
