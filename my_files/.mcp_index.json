@@ -2,34 +2,35 @@
   "file_index": {
     "example.txt": {
       "size": 19,
-      "created": "2025-06-08T17:25:12.716292",
-      "modified": "2025-06-08T17:25:12.716292",
+      "created": "2025-06-24T08:14:01.520918",
+      "modified": "2025-06-24T08:14:01.520918",
       "extension": ".txt",
       "name": "example.txt",
       "path": "example.txt",
       "hash": "54ec9e924ff8b98fffc13d383e9c5bdf9b84792270abb001bf2c74835de890fd",
-      "indexed_at": "2025-06-11T09:51:03.134996",
-      "last_accessed": "2025-06-11T09:51:03.138987"
+      "indexed_at": "2025-06-24T17:18:26.946062"
+    },
+    "index.json": {
+      "size": 139,
+      "created": "2025-06-24T17:14:23.139335",
+      "modified": "2025-06-24T17:14:23.140336",
+      "extension": ".json",
+      "name": "index.json",
+      "path": "index.json",
+      "hash": "8aa6cc4f7e31db81f0b3c4f53822d8d0aafb441b45e236855d563214d3694ce3",
+      "indexed_at": "2025-06-24T17:18:26.947059"
     },
     "test.txt": {
-      "size": 15,
-      "created": "2025-06-08T17:25:12.717297",
-      "modified": "2025-06-11T09:51:03.141980",
+      "size": 64,
+      "created": "2025-06-24T08:14:01.521943",
+      "modified": "2025-06-24T17:13:55.020727",
       "extension": ".txt",
       "name": "test.txt",
       "path": "test.txt",
-      "hash": "ea7af9f4e5903c4d4bad21035ea2502cad9013af71be6d3cbdee3b67d8a58b7f",
-      "indexed_at": "2025-06-11T09:51:03.142984",
-      "custom_metadata": {
-        "author": "User",
-        "category": "test",
-        "tags": [
-          "mcp",
-          "filesystem"
-        ]
-      }
+      "hash": "d10580f6dddae464ca5286a0be7ccc961635614ebf42bd4d6910681efc972b83",
+      "indexed_at": "2025-06-24T17:18:26.947059"
     }
   },
   "metadata_cache": {},
-  "last_updated": "2025-06-11T09:51:03.145984"
+  "last_updated": "2025-06-24T17:18:26.948060"
 }

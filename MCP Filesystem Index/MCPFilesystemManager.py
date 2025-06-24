@@ -216,8 +216,9 @@ class MCPFilesystemManager:
             print(f"Error writing file {filepath}: {e}")
             return False
 
-    async def list_directory(self, path: str = ".") -> List[str]:
+    async def list_directory(self) -> List[str]:
         """List directory using MCP"""
+        path = "."
         try:
             # Convert relative path to absolute path within the base directory
             if not os.path.isabs(path):
@@ -231,7 +232,7 @@ class MCPFilesystemManager:
             print(f"Error listing directory {path}: {e}")
             return []
 
-    def search_files(self, query: str, search_type: str = "name") -> List[Dict[str, Any]]:
+    async def search_files(self, query: str, search_type: str = "name") -> List[Dict[str, Any]]:
         """Search files in the index"""
         results = []
         query_lower = query.lower()
@@ -260,7 +261,7 @@ class MCPFilesystemManager:
 
         return results
 
-    def get_file_stats(self) -> Dict[str, Any]:
+    async def get_file_stats(self) -> Dict[str, Any]:
         """Get statistics about indexed files"""
         if not self.file_index:
             return {}
@@ -282,25 +283,28 @@ class MCPFilesystemManager:
             'last_indexed': datetime.now().isoformat()
         }
 
-    def add_file_metadata(self, filepath: str, metadata: Dict[str, Any]):
+    async def add_file_metadata(self, filepath: str, metadata: Dict[str, Any]):
         """Add custom metadata to a file"""
         if filepath in self.file_index:
             if 'custom_metadata' not in self.file_index[filepath]:
                 self.file_index[filepath]['custom_metadata'] = {}
             self.file_index[filepath]['custom_metadata'].update(metadata)
             self._save_index()
+            return True
+        else:
+            return False
 
-    def get_file_metadata(self, filepath: str) -> Optional[Dict[str, Any]]:
+    async def get_file_metadata(self, filepath: str) -> Optional[Dict[str, Any]]:
         """Get metadata for a specific file"""
         return self.file_index.get(filepath)
 
-    def export_index(self, export_path: str) -> bool:
+    async def export_index(self, export_path: str) -> bool:
         """Export index to JSON file"""
         try:
             export_data = {
                 'base_directory': str(self.base_directory),
                 'export_time': datetime.now().isoformat(),
-                'stats': self.get_file_stats(),
+                'stats': await self.get_file_stats(),
                 'file_index': self.file_index
             }
 
@@ -314,56 +318,3 @@ class MCPFilesystemManager:
             return False
 
 
-# Usage Example
-async def main():
-    # Make sure the directory exists
-    target_dir = "../my_files"
-    if not os.path.exists(target_dir):
-        os.makedirs(target_dir)
-        print(f"Created directory: {target_dir}")
-
-    # Create a test file first
-    test_file_path = os.path.join(target_dir, "example.txt")
-    if not os.path.exists(test_file_path):
-        with open(test_file_path, 'w') as f:
-            f.write("This is a test file for MCP!")
-        print(f"Created test file: {test_file_path}")
-
-    async with MCPFilesystemManager(target_dir) as fm:
-        # Read a file
-        content = await fm.read_file("example.txt")
-        print(f"File content: {content}")
-
-        # Write a file
-        success = await fm.write_file("test.txt", "Hello from MCP!")
-        print(f"Write file success: {success}")
-
-        # List directory
-        files = await fm.list_directory(".")
-        print(f"Directory contents: {files}")
-
-        # Search files
-        txt_files = fm.search_files(".txt", "extension")
-        print(f"Text files: {len(txt_files)}")
-
-        # Get file stats
-        stats = fm.get_file_stats()
-        print(f"File statistics: {stats}")
-
-        # Add custom metadata
-        fm.add_file_metadata("test.txt", {
-            "author": "User",
-            "category": "test",
-            "tags": ["mcp", "filesystem"]
-        })
-
-        # Export index
-        fm.export_index("file_index_export.json")
-
-
-if __name__ == "__main__":
-    # Set event loop policy for Windows to avoid transport warnings
-    if os.name == 'nt':  # Windows
-        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
-
-    asyncio.run(main())

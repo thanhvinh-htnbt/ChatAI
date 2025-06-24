@@ -1,1 +1,3 @@
-Hello from MCP!
+New technologies in Software development 
+ ChatAI 
+ Tool Calling
